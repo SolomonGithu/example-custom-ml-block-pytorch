@@ -1,0 +1,23 @@
+cd scripts; npm ci; node configure-project.js
+
+edge-impulse-blocks init
+
+docker build -t yolo26-block .
+
+====== Optional if labels are in JSON file
+(Get-Content extract_dataset.py) -replace "Y_split_train.npy","Y_split_train.json" -replace "Y_split_test.npy","Y_split_test.json" | Set-Content extract_dataset.py
+
+Select-String -Path extract_dataset.py -Pattern "Y_split"
+
+(Get-Content data\Y_split_train.json -Raw).Substring(0,600)
+============
+
+edge-impulse-blocks init
+
+edge-impulse-blocks runner --download-data data/ --clean
+
+docker run --rm --entrypoint python3 -v ${PWD}:/app yolo26-block -c "import numpy as np,os; f=open('/app/data/X_split_train.npy','rb'); v=np.lib.format.read_magic(f); s,fo,d=(np.lib.format.read_array_header_1_0(f) if v==(1,0) else np.lib.format.read_array_header_2_0(f)); print('shape',s,'dtype',d,'expected',f.tell()+int(np.prod(s))*d.itemsize,'actual',os.path.getsize('/app/data/X_split_train.npy'))"
+
+docker run --rm --network=none -v ${PWD}:/app yolo26-block --data-directory /app/data --epochs 5 --model-size n --out-directory /app/out
+
+edge-impulse-blocks push

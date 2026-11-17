@@ -2,26 +2,48 @@
     "version": 1,
     "type": "machine-learning",
     "info": {
-        "name": "PyTorch multi-layer perceptron",
-        "description": "Demonstration of a simple PyTorch custom learn block with CUDA drivers that can run on both CPU and GPU.",
-        "operatesOn": "other",
+        "name": "YOLO26",
+        "description": "Object detection based on Ultralytics YOLO26 (square images only).",
+        "operatesOn": "object_detection",
         "indRequiresGpu": false,
-        "repositoryUrl": "https://github.com/edgeimpulse/example-custom-ml-block-pytorch"
+        "imageInputScaling": "0..1",
+        "objectDetectionLastLayer": "yolov11-abs"
     },
     "parameters": [
         {
             "name": "Number of training cycles",
             "value": "30",
             "type": "int",
-            "help": "Number of epochs to train the neural network on.",
+            "help": "Number of epochs to train for.",
             "param": "epochs"
         },
         {
-            "name": "Learning rate",
-            "value": "0.001",
-            "type": "float",
-            "help": "How fast the neural network learns, if the network overfits quickly, then lower the learning rate.",
-            "param": "learning-rate"
+            "name": "Model size",
+            "value": "n",
+            "type": "select",
+            "valid": [
+                {
+                    "label": "Nano",
+                    "value": "n"
+                },
+                {
+                    "label": "Small",
+                    "value": "s"
+                },
+                {
+                    "label": "Medium",
+                    "value": "m"
+                }
+            ],
+            "param": "model-size"
+        },
+        {
+            "name": "Batch size",
+            "value": "16",
+            "type": "int",
+            "help": "Reduce this for larger models.",
+            "param": "batch-size",
+            "optional": true
         }
     ]
 }

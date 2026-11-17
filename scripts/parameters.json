@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "type": "machine-learning",
+    "info": {
+        "name": "YOLO26",
+        "description": "Object detection based on Ultralytics YOLO26. Fine-tunes a pretrained YOLO26 model (nano, small or medium) based on your labelled images. Supports RGB square images.",
+        "operatesOn": "object_detection",
+        "imageInputScaling": "0..1",
+        "indRequiresGpu": false,
+        "objectDetectionLastLayer": "yolov11-abs",
+        "repositoryUrl": "https://github.com/edgeimpulse/example-custom-ml-block-pytorch"
+    },
+    "parameters": []
+}
