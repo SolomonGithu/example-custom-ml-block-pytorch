@@ -6,7 +6,7 @@ This repository is an example on how to [add a YOLO26 learning block](https://do
 
 As a primer, read the [Custom learning blocks](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/adding-custom-learning-blocks) page in the Edge Impulse docs.
 
-[Example project in Studio](https://studio.edgeimpulse.com/public/1168120/latest)
+👉 [Example project in Studio](https://studio.edgeimpulse.com/public/1168120/latest)
 
 ## Running the pipeline
 
