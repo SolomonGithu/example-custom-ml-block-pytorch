@@ -1,12 +1,12 @@
-# Custom YOLO26 ML block example for Edge Impulse
+# Train YOLO26 models in Edge Impulse
 
 ![Image](media/image1.png)
+
+👉 [Explore project in Studio](https://studio.edgeimpulse.com/public/1168120/latest)
 
 This repository is an example on how to [add a YOLO26 learning block](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/adding-custom-learning-blocks) to Edge Impulse. If you want to see a more complex PyTorch example, see [edgeimpulse/yolov5](https://github.com/edgeimpulse/yolov5). Or if you're looking for the Keras example, see [edgeimpulse/example-custom-ml-block-keras](https://github.com/edgeimpulse/example-custom-ml-block-keras).
 
 As a primer, read the [Custom learning blocks](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/adding-custom-learning-blocks) page in the Edge Impulse docs.
-
-👉 [Example project in Studio](https://studio.edgeimpulse.com/public/1168120/latest)
 
 ## Running the pipeline
 
