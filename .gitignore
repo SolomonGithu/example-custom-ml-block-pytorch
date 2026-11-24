@@ -9,3 +9,4 @@ GOALS.md
 scripts/node_modules/
 out-*/
 out*.log
+steps_taken.txt
